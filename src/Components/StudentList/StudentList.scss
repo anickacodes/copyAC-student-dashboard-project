@@ -1,0 +1,22 @@
+.student-container {
+    border: 2px solid black;
+    margin: 40px;
+    line-height: 1.5;
+    width: 540px;
+
+}
+.students-and-count {
+    border: 2px solid red;
+}
+
+ul {
+    display: grid;
+    gap: 10px;
+    
+    li {
+        border: 2px solid black;
+        height: 20px;
+        color: red;
+        list-style: none;
+    }
+}
