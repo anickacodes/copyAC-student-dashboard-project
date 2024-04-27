@@ -1,22 +1,40 @@
 .student-container {
-    border: 2px solid black;
     margin: 40px;
     line-height: 1.5;
     width: 540px;
 
 }
 .students-and-count {
-    border: 2px solid red;
+    margin-bottom: 10px;
+
+    hr {
+        width: 100%;
+    }
 }
 
 ul {
     display: grid;
     gap: 10px;
-
+    
     li {
-        border: 2px solid black;
-        height: 20px;
-        color: rgb(240, 164, 164);
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        border: 2px solid rgb(93, 147, 110);
+        height: 130px;
+        color: rgb(34, 0, 255);
         list-style: none;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
     }
+
+    img {
+        margin-left: 10px;
+        height: 100px;
+    }
+
+    .show-more {
+        margin-top: 10px;
+    }
+
 }

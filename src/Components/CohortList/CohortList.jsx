@@ -1,31 +1,65 @@
 import React from 'react'
 import '../CohortList/CohortList.scss'
 import studentData from '/Users/eliwills/Desktop/Pursuit/Lab-Work/student-dashboard-project/src/data/data.json'
-const CohortList = () => {
+import { v4 as generateUUID } from 'uuid';
+import StudentList from '../StudentList/StudentList';
 
+
+const CohortList = ({setcohort}) => {
+
+
+let sortedByCohort = studentData.sort((a, b) => { 
+    let startDateA = new Date(a.cohort.cohortStartDate);
+    let startDateB = new Date(b.cohort.cohortStartDate);
+
+    return startDateB - startDateA;
+});
+
+// Creates the Display of a unique array of every Class Cohort and start year 
+let cohortSet = Array.from(new Set(sortedByCohort.map(student => 
+  
+  student.cohort.cohortCode
+
+)))
+// ^^^^
+
+//Utilizes the cohortCode, seperates and adds a space between the year and season then returns it as a string. ✅
+  let cohortSpaced = cohortSet.map(cohort => {
+  
+    let splitCohort = cohort.split('');
+
+        splitCohort.splice(-4,0,' ');
+      
+    let joinedStringCohort = splitCohort.join(''); 
+
+      return joinedStringCohort;
+// ^^^^
+
+})
 
 
 
   return (
     <div className='container'>
     <h2>Choose a Class by Start Date</h2>
+
         <div className='class-Date'>
-            <p className='cohort-season'><strong>Winter 2026</strong></p>
+
+        <p className='cohort-season' key={generateUUID()} onClick={() => setcohort('All Students')}><strong>All Students</strong></p>
             <hr />
-            <p className='cohort-season'><strong>Fall 2026</strong></p>
-            <hr />
-            <p className='cohort-season'><strong>Summer 2026</strong></p>
-            <hr />
-            <p className='cohort-season'><strong>Spring 2026</strong></p>
-            <hr />
-            <p className='cohort-season'><strong>Winter 2025</strong></p>
-            <hr />
-            <p className='cohort-season'><strong>Fall 2025</strong></p>
-            <hr />
-            <p className='cohort-season'><strong>Summer 2025</strong></p>
-            <hr />
-            <p className='cohort-season'> <strong>Spring 2025</strong></p>
-            <hr />
+
+            { 
+            cohortSpaced.map((cohortSeason, i) => {
+
+              return(
+              <>
+              {/* add onclick to change "All Students to the current selected cohort"  '✅'*/}
+              <p className='cohort-season' key={i} onClick={() => (setcohort(cohortSeason))}>  <strong>{cohortSeason} </strong> </p>
+              
+              <hr />
+              </>
+              )
+            })}
         </div>
     
     </div>
