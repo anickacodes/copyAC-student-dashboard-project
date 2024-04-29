@@ -24,18 +24,19 @@ let cohortSet = Array.from(new Set(sortedByCohort.map(student =>
 // ^^^^
 
 //Utilizes the cohortCode, seperates and adds a space between the year and season then returns it as a string. ✅
-  let cohortSpaced = cohortSet.map(cohort => {
+  let displayNames = cohortSet.map(cohort => {
   
     let splitCohort = cohort.split('');
 
-        splitCohort.splice(-4,0,' ');
-      
+    
+splitCohort.splice(-4,0,' ');
+    
     let joinedStringCohort = splitCohort.join(''); 
+    
+    return joinedStringCohort;
 
-      return joinedStringCohort;
-// ^^^^
 
-})
+  })
 
 
 
@@ -45,12 +46,11 @@ let cohortSet = Array.from(new Set(sortedByCohort.map(student =>
 
         <div className='class-Date'>
 
-        <p className='cohort-season' key={generateUUID()} onClick={() => setcohort('All Students')}><strong>All Students</strong></p>
+        <p className='cohort-season' onClick={() => setcohort('All Students')}><strong>All Students</strong></p>
             <hr />
 
             { 
-            cohortSpaced.map((cohortSeason, i) => {
-
+            cohortSet.map((cohortSeason, i) => {
               return(
               <>
               {/* add onclick to change "All Students to the current selected cohort"  '✅'*/}

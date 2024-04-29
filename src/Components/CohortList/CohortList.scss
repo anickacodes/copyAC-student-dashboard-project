@@ -15,9 +15,14 @@
 .cohort-season {
     margin-top: 15px;
     padding: 10px;
+    cursor: pointer;
     
 
 }
+
+.cohort-season:hover{
+    font-size: 20px;
+} 
 
 hr {
     width: 310px;

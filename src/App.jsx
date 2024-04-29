@@ -13,7 +13,11 @@ function App() {
   const [numberOfStudents, setNumberOfStudents] = useState(0);
   const [studentList, setStudentList] = useState(data);
 
-  //RESEARCH ON PROPS YOU NEED PROPS FOR THIS DESPERATELY
+
+
+
+
+
 
 
   return (
@@ -22,7 +26,7 @@ function App() {
       <div className='navbar'>
           <h1>Student Dashboard</h1>
       </div>
-      <StudentList data = { data } cohort = { cohort }/>
+      <StudentList data = { data } cohort = { cohort } setstudentlist = { setStudentList } studentList = { studentList } numberOfStudents = { numberOfStudents } setNumberOfStudents ={ setNumberOfStudents } />
     </>
   );
 }
