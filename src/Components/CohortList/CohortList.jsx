@@ -28,8 +28,7 @@ let cohortSet = Array.from(new Set(sortedByCohort.map(student =>
   
     let splitCohort = cohort.split('');
 
-    
-splitCohort.splice(-4,0,' ');
+        splitCohort.splice(-4,0,' ');
     
     let joinedStringCohort = splitCohort.join(''); 
     
@@ -37,6 +36,8 @@ splitCohort.splice(-4,0,' ');
 
 
   })
+
+  
 
 
 
@@ -46,7 +47,9 @@ splitCohort.splice(-4,0,' ');
 
         <div className='class-Date'>
 
-        <p className='cohort-season' onClick={() => setcohort('All Students')}><strong>All Students</strong></p>
+          <p className='cohort-season' onClick={() => setcohort('All Students')}>
+            <strong>All Students</strong>
+          </p>
             <hr />
 
             { 
@@ -54,7 +57,9 @@ splitCohort.splice(-4,0,' ');
               return(
               <>
               {/* add onclick to change "All Students to the current selected cohort"  '✅'*/}
-              <p className='cohort-season' key={i} onClick={() => (setcohort(cohortSeason))}>  <strong>{cohortSeason} </strong> </p>
+              <p className='cohort-season' key={i} onClick={ () => (setcohort(cohortSeason)) }> 
+                <strong>{ cohortSeason } </strong> 
+              </p>
               
               <hr />
               </>

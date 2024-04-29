@@ -10,23 +10,15 @@ function App() {
   let data = studentData;
   
   const [cohort, setCohort] = useState("All Students");
-  const [numberOfStudents, setNumberOfStudents] = useState(0);
-  const [studentList, setStudentList] = useState(data);
 
-
-
-
-
-
-
-
+  
   return (
 <>
 <section className='Cohort-List'> <CohortList setcohort = { setCohort }/> </section>
       <div className='navbar'>
           <h1>Student Dashboard</h1>
       </div>
-      <StudentList data = { data } cohort = { cohort } setstudentlist = { setStudentList } studentList = { studentList } numberOfStudents = { numberOfStudents } setNumberOfStudents ={ setNumberOfStudents } />
+      <StudentList data = { data } cohort = { cohort } />
     </>
   );
 }
