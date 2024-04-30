@@ -10,6 +10,10 @@
     hr {
         width: 100%;
     }
+
+    span {
+        color: rgb(93, 147, 110)
+    }
 }
 
 ul {
@@ -18,10 +22,10 @@ ul {
     
     li {
         display: grid;
-        grid-template-columns: 100px 1fr;
+        grid-template-columns: 100px 1fr 0.5fr;
         border: 2px solid rgb(93, 147, 110);
         height: 130px;
-        color: rgb(34, 0, 255);
+        color: rgb(0, 0, 0);
         list-style: none;
         justify-content: center;
         align-items: center;
@@ -33,8 +37,23 @@ ul {
         height: 100px;
     }
 
-    .show-more {
+    .show-more a {
         margin-top: 10px;
+        color: rgb(93, 147, 110);
+    
+    }
+
+    .track-Status {
+        grid-column: 3/4;
+        grid-row: 1;
+    }
+
+    .on-track {
+        color: rgb(93, 147, 110);
+    }
+
+    .off-track {
+        color: red;
     }
 
 }

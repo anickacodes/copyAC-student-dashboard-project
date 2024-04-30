@@ -5,10 +5,10 @@ import { v4 as generateUUID } from 'uuid';
 import StudentList from '../StudentList/StudentList';
 
 
-const CohortList = ({setcohort}) => {
+const CohortList = ( { setcohort, displayNames } ) => {
 
 
-let sortedByCohort = studentData.sort((a, b) => { 
+let sortedByCohort = studentData.sort(( a, b ) => { 
     let startDateA = new Date(a.cohort.cohortStartDate);
     let startDateB = new Date(b.cohort.cohortStartDate);
 
@@ -21,23 +21,6 @@ let cohortSet = Array.from(new Set(sortedByCohort.map(student =>
   student.cohort.cohortCode
 
 )))
-// ^^^^
-
-//Utilizes the cohortCode, seperates and adds a space between the year and season then returns it as a string. ✅
-  let displayNames = cohortSet.map(cohort => {
-  
-    let splitCohort = cohort.split('');
-
-        splitCohort.splice(-4,0,' ');
-    
-    let joinedStringCohort = splitCohort.join(''); 
-    
-    return joinedStringCohort;
-
-
-  })
-
-  
 
 
 
@@ -53,12 +36,14 @@ let cohortSet = Array.from(new Set(sortedByCohort.map(student =>
             <hr />
 
             { 
-            cohortSet.map((cohortSeason, i) => {
+            cohortSet.map(( cohortSeason, i ) => {
+
+
               return(
               <>
               {/* add onclick to change "All Students to the current selected cohort"  '✅'*/}
-              <p className='cohort-season' key={i} onClick={ () => (setcohort(cohortSeason)) }> 
-                <strong>{ cohortSeason } </strong> 
+              <p className='cohort-season' key={ i } onClick={ () => (setcohort( cohortSeason )) }> 
+                <strong>{ displayNames( cohortSeason ) } </strong> 
               </p>
               
               <hr />
