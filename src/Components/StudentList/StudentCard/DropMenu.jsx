@@ -22,9 +22,9 @@ const DropMenu = ({ viewInfo, setViewInfo, fellow }) => {
       </div>
       <div>
         <p><strong>Scores</strong></p>
-        <p>Assignments: {`${fellow.cohort.scores.assignments * 100} %`}</p>
-        <p>Projects: {}</p>
-        <p>Assessments: {}</p>
+        <p>Assignments: {`${fellow.cohort.scores.assignments * 100}%`}</p>
+        <p>Projects: {`${fellow.cohort.scores.projects * 100}%`}</p>
+        <p>Assessments: {`${fellow.cohort.scores.assessments * 100}%`}</p>
       </div>
       <div>
         <p><strong>Certifications</strong></p>
