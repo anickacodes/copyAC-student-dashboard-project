@@ -24,12 +24,14 @@ ul {
         display: grid;
         grid-template-columns: 100px 1fr 0.5fr;
         border: 2px solid rgb(93, 147, 110);
-        height: 130px;
+        height: auto;
+        width: 700px;
         color: rgb(0, 0, 0);
         list-style: none;
         justify-content: center;
         align-items: center;
         gap: 40px;
+        padding: 10px;
     }
 
     img {
@@ -56,4 +58,12 @@ ul {
         color: red;
     }
 
+    .certs-scores {
+        grid-row: auto;
+
+    }
+    
+    span {
+    color: rgb(93, 147, 110);
+    }
 }

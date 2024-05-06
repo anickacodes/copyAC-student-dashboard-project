@@ -15,7 +15,6 @@ let sortedByCohort = studentData.sort(( a, b ) => {
     return startDateB - startDateA;
 });
 
-// Creates the Display of a unique array of every Class Cohort and start year 
 let cohortSet = Array.from(new Set(sortedByCohort.map(student => 
   
   student.cohort.cohortCode
