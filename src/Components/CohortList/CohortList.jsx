@@ -1,11 +1,10 @@
 import React from 'react'
 import '../CohortList/CohortList.scss'
-import studentData from '/Users/eliwills/Desktop/Pursuit/Lab-Work/student-dashboard-project/src/data/data.json'
 import { v4 as generateUUID } from 'uuid';
 import StudentList from '../StudentList/StudentList';
 
 
-const CohortList = ( { setcohort, displayNames } ) => {
+const CohortList = ( {studentData, setcohort, displayNames } ) => {
 
 
 let sortedByCohort = studentData.sort(( a, b ) => { 
