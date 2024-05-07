@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 function App() {
 // Variable for data
   const [cohort, setCohort] = useState("All Students");
-  const[students, setStudents] = useState(studentData)
+  // const[students, setStudents] = useState(studentData)
 
 
 //Utilizes the cohortCode, seperates and adds a space between the year and season then returns it as a string. ✅
