@@ -30,7 +30,7 @@ ul {
         list-style: none;
         justify-content: center;
         align-items: center;
-        gap: 40px;
+        gap: 10px 30px;
         padding: 10px;
     }
 
@@ -57,13 +57,30 @@ ul {
     .off-track {
         color: red;
     }
-
-    .certs-scores {
-        grid-row: auto;
-
-    }
+    
     
     span {
-    color: rgb(93, 147, 110);
+        color: rgb(93, 147, 110);
+    }
+
+    .certs-scores {
+        grid-column: 1/4;
+        
+    .details {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        margin: 20px 0;
+    }
+    hr {
+        grid-column: 1 / 4;
+        width: 95%;
+        justify-self: center;
+        margin: 34px 0px;
+    }
+
+    .comments {
+        grid-column: 1/4;
+    }
     }
 }

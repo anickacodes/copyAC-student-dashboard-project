@@ -6,7 +6,7 @@ const StudentList = ({ data, cohort, displayNames }) => {
 
   
 
-      const newArray = data.filter(byCohort => { 
+      const cohortBySeason = data.filter(byCohort => { 
         return byCohort.cohort.cohortCode === cohort
       })
 
@@ -32,14 +32,12 @@ const StudentList = ({ data, cohort, displayNames }) => {
         <ul>
 
           { data.map((fellow, i ) => {
-
-
-
+            
             return (
 
-                <StudentCard fellow = { fellow } key ={fellow.id}  />
+              <StudentCard fellow = { fellow } key ={fellow.id}  />
+
           )
-        
           })}
         </ul>
     </div>
@@ -52,43 +50,23 @@ const StudentList = ({ data, cohort, displayNames }) => {
 
     <div className='students-and-count'>
 
-        <h3>{ displayNames( cohort ) }</h3> 
-        <p>Total Students: { newArray.length }</p> 
-    </div>
+      <h3>{ displayNames( cohort ) }</h3> 
+      <p>Total Students: <span>{ cohortBySeason.length }</span></p> 
 
+    </div>
     <div>
-        <ul>
+      <ul>
+        { cohortBySeason.map((fellow, i) => {
 
-          { newArray.map(fellow => {
+          return (
 
-              const { resume, github, linkedin, mockInterview } = fellow.certifications;
+            <StudentCard fellow = { fellow } key ={fellow.id}  />
 
-              const codeWartotal = fellow.codewars.current.total;
-
-              const checkStatus = resume && github && linkedin && mockInterview && codeWartotal > 600;
-          
-            return (
-            
-            <li key= {fellow.id} > 
-              <img src= {fellow.profilePhoto} />
-              <section>
-                <strong>{ `${ fellow.names.preferredName } ${ fellow.names.middleName[0] } ${ fellow.names.surname }` }</strong>
-                <p>{ fellow.username }</p>
-                <p><span className='dob'>Birthday: </span>{ fellow.dob }</p>
-                <p className='show-more'><a href="">Show More...</a></p>
-              </section>
-              <p>{ checkStatus ? <span className='on-track'>On-Track to Graduation</span> 
-                : 
-                <span className='off-track'>Off-Track to Graduation</span> } 
-              </p>
-            </li> 
-          )
-        
-          })}
-        </ul>
+        )
+        })}
+      </ul>
     </div>
-  
-</div>
+  </div>
   
   }
 

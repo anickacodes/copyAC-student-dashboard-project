@@ -24,7 +24,6 @@ const StudentCard = ({ fellow }) => {
                 <p>
                 <span className='dob'>Birthday: </span>{fellow.dob}
                 </p>
-            <DropMenu className="certs-scores" viewInfo={ viewInfo } setViewInfo = { setViewInfo } fellow={ fellow }/>
 
         </section>
 
@@ -32,8 +31,9 @@ const StudentCard = ({ fellow }) => {
         { checkStatus ? <span className='on-track'>On-Track to Graduation</span> 
         : 
         <span className='off-track'>Off-Track to Graduation</span> 
-        } 
+    } 
         </p>
+    <DropMenu viewInfo={ viewInfo } setViewInfo = { setViewInfo } fellow={ fellow }/>
     </li> 
 
     </>
