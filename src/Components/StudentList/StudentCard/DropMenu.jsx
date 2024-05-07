@@ -1,12 +1,13 @@
 import React from 'react'
 import CommentSection from './CommentSection/CommentSection';
+import '../StudentList.scss'
 const DropMenu = ({ viewInfo, setViewInfo, fellow }) => {
     
   let percentGoal = Math.round((fellow.codewars.current.total / fellow.codewars.goal.total) * 100);
 
   return (
     <div className='certs-scores'>
-      <div>
+      <div className='show-text'>
       { viewInfo ? <span onClick={() => { setViewInfo(!viewInfo) } }>Show Less...</span> : <span onClick={() => { setViewInfo(!viewInfo) } }>Show More...</span> }
       </div>
       
