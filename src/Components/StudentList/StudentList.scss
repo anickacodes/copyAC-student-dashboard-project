@@ -1,9 +1,13 @@
 .student-container {
-    margin: 40px;
+    margin: 20px;
     line-height: 1.5;
-    width: 540px;
-
+    width: 80vw;
+    border: 2px dashed green;
+    padding: 10px;
+    grid-column: 2/3;
+    grid-row: 2/3;
 }
+
 .students-and-count {
     margin-bottom: 10px;
 
@@ -83,4 +87,8 @@ ul {
         grid-column: 1/4;
     }
     }
+}
+
+.show-text:hover{
+    cursor: pointer;
 }

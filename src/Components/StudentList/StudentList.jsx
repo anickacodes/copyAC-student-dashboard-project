@@ -54,7 +54,7 @@ const StudentList = ({ data, cohort, displayNames }) => {
       <p>Total Students: <span>{ cohortBySeason.length }</span></p> 
 
     </div>
-    <div>
+    <div className='all-cards'>
       <ul>
         { cohortBySeason.map((fellow, i) => {
 

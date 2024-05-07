@@ -26,13 +26,13 @@ function App() {
 
   
   return (
-<>
+<div className='app'>
 <section className='Cohort-List'> <CohortList studentData = { studentData } setcohort = { setCohort } displayNames = { displayNames }/> </section>
       <div className='navbar'>
           <h1>Student Dashboard</h1>
       </div>
       <StudentList data = { studentData } cohort = { cohort }  displayNames = { displayNames }/>
-    </>
+    </div>
   );
 }
 
